@@ -46,10 +46,11 @@ def getBMI():
     name = nameEntry.get()
     height = float(heightEntry.get())
     weight = float(weightEntry.get())
-    bmi = weight/(height**2)
+    bmi_long = weight/(height**2)*10000
+    bmi_short = round(bmi_long,2)
     textarea = tk.Text(master = window, height = 5, width = 40)
     textarea.grid(column = 1, row = 10)
-    ANSWER = "Hey {name}, your Body Mass Index value is {bmi}.".format(name=name, bmi=bmi)
+    ANSWER = "Hey {name}, your Body Mass Index value is {bmi}".format(name=name, bmi=bmi_short)
     textarea.insert(tk.END, ANSWER)
 
 def getAge():
